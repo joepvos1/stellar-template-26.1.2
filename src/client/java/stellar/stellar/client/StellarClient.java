@@ -10,6 +10,7 @@ import net.fabricmc.fabric.api.client.keymapping.v1.KeyMappingHelper;
 import net.minecraft.client.KeyMapping;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
+import stellar.stellar.client.creativemodetab.ModCreativeModeTabs;
 
 public class StellarClient implements ClientModInitializer {
 	KeyMapping.Category CATEGORY = KeyMapping.Category.register(
@@ -26,12 +27,14 @@ public class StellarClient implements ClientModInitializer {
 
 	@Override
 	public void onInitializeClient() {
-		// This entrypoint is suitable for setting up client-specific logic, such as rendering.
+		ModCreativeModeTabs.registerCreativeModeTabs();
+
+
 		ClientTickEvents.END_CLIENT_TICK.register(client -> {
-	while (this.sendToChatKey.consumeClick()) {
-		if (client.player != null) {
-			client.player.sendSystemMessage(Component.literal("/give @s stellar:lemon_lemon 1"));
-		}
+			while (this.sendToChatKey.consumeClick()) {
+				if (client.player != null) {
+					client.player.sendSystemMessage(Component.literal("/give @s stellar:lemon_lemon 1"));
+				}
 	}
 });
 	}

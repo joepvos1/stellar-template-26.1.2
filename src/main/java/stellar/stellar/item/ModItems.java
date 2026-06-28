@@ -2,14 +2,12 @@ package stellar.stellar.item;
 
 import java.util.function.Function;
 
-import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 import stellar.stellar.Stellar;
 //import net.minecraft.component.DataComponents;
@@ -25,9 +23,6 @@ public class ModItems {
     public static void registerModItems() {
         System.out.println("Registering Mod Items for " + stellar.stellar.Stellar.MOD_ID);
 
-        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.INGREDIENTS).register(output -> {
-            output.accept(LEMON);
-        });
     }
     
 }
