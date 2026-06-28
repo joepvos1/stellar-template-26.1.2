@@ -2,7 +2,7 @@
 	"schemaVersion": 1,
 	"id": "stellar",
 	"version": "${version}",
-	"name": "stellar",
+	"name": "Stellar",
 	"description": "This is an example description! Tell everyone what your mod is about!",
 	"authors": [
 		"Me!"
@@ -20,6 +20,9 @@
 		],
 		"client": [
 			"stellar.stellar.client.StellarClient"
+		],
+		"fabric-datagen": [
+			"stellar.stellar.client.StellarDataGenerator"
 		]
 	},
 	"mixins": [
